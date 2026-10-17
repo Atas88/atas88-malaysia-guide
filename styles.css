@@ -1,0 +1,58 @@
+* { box-sizing: border-box; }
+:root {
+  color-scheme: light;
+  --red: #c92532;
+  --red-dark: #971b25;
+  --ink: #20212a;
+  --muted: #626575;
+  --surface: #ffffff;
+  --soft: #f7f3f3;
+  --line: #eadfe0;
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--surface);
+  line-height: 1.65;
+}
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--line);
+}
+.brand { font-size: 1.55rem; font-weight: 850; letter-spacing: -.05em; text-decoration: none; color: var(--ink); }
+.brand span { color: var(--red); }
+nav { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+nav a { color: var(--ink); text-decoration: none; font-size: .95rem; }
+nav a:hover { color: var(--red); }
+.hero {
+  padding: clamp(4rem, 10vw, 7rem) clamp(1rem, 8vw, 7rem);
+  background: linear-gradient(135deg, #fff 0%, #fff5f5 60%, #fbe5e7 100%);
+}
+.eyebrow { color: var(--red-dark); font-weight: 800; letter-spacing: .13em; font-size: .78rem; }
+h1 { max-width: 850px; margin: .4rem 0 1rem; font-size: clamp(2.4rem, 6vw, 4.8rem); line-height: 1.08; letter-spacing: -.045em; }
+.intro { max-width: 650px; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.25rem); }
+.button { display: inline-block; margin-top: 1rem; padding: .8rem 1.1rem; border-radius: .65rem; color: #fff; background: var(--red); font-weight: 750; text-decoration: none; }
+.button:hover { background: var(--red-dark); }
+.section { padding: 3.5rem clamp(1rem, 6vw, 5rem); max-width: 1250px; margin: auto; }
+h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.2; letter-spacing: -.025em; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.card { padding: 1.35rem; border: 1px solid var(--line); border-radius: 1rem; background: #fff; }
+.card h3 { margin-top: 0; }
+.card p, .section p { color: var(--muted); }
+.section-muted { max-width: none; background: var(--soft); }
+.checklist { max-width: 780px; padding-left: 1.25rem; }
+.checklist li { padding: .35rem 0; }
+footer { padding: 2rem clamp(1rem, 6vw, 5rem); border-top: 1px solid var(--line); background: #fcfafa; }
+footer p { margin: .3rem 0; }
+.fine-print { max-width: 900px; color: var(--muted); font-size: .88rem; }
+@media (max-width: 720px) {
+  .site-header { align-items: flex-start; flex-direction: column; }
+  nav { gap: .75rem 1rem; }
+  .cards { grid-template-columns: 1fr; }
+}
